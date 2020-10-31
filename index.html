@@ -2,30 +2,45 @@
 
 <head>
   <style>
-    svg .happy {
-      fill:url(#happy);
-    }
-    svg .spruce {
-      fill:url(#spruce);
-    }
-    svg .babyshark {
-      fill:url(#babyshark);
-    }
-    svg .sandstone {
-      fill:url(#sandstone);
-    }
-    svg .lightbosque {
-      fill:url(#lightbosque);
-    }
-    svg .concrete {
-      fill:url(#concrete);
-    }
-    svg .wetcement {
-      fill:url(#wetcement);
-    }
-    svg .darkcharcoal {
-      fill:url(#darkcharcoal);
-    }
+    svg .babyshark { fill:url(#babyshark);}
+    svg .blueberry { fill:url(#blueberry);}
+    svg .buttercup { fill:url(#buttercup);}
+    svg .canyon { fill:url(#canyon);}
+    svg .charcoal { fill:url(#charcoal);}
+    svg .charlie { fill:url(#charlie);}
+    svg .concrete_melange { fill:url(#concrete_melange);}
+    svg .dark_charcoal { fill:url(#dark_charcoal);}
+    svg .deep_hygrania { fill:url(#deep_hygrania);}
+    svg .denim { fill:url(#denim);}
+    svg .dill { fill:url(#dill);}
+    svg .eggplant_melange { fill:url(#eggplant_melange);}
+    svg .flori_melange { fill:url(#flori_melange);}
+    svg .freckles_melange { fill:url(#freckles_melange);}
+    svg .glenda { fill:url(#glenda);}
+    svg .golden_melange { fill:url(#golden_melange);}
+    svg .happy { fill:url(#happy);}
+    svg .heather_melange { fill:url(#heather_melange);}
+    svg .hey { fill:url(#hey);}
+    svg .iced_lt { fill:url(#iced_lt);}
+    svg .juiced { fill:url(#juiced);}
+    svg .juniper { fill:url(#juniper);}
+    svg .light_bosque { fill:url(#light_bosque);}
+    svg .love_bird { fill:url(#love_bird);}
+    svg .mallard { fill:url(#mallard);}
+    svg .moss { fill:url(#moss);}
+    svg .natural { fill:url(#natural);}
+    svg .peachicot { fill:url(#peachicot);}
+    svg .red_hot { fill:url(#red_hot);}
+    svg .royal { fill:url(#royal);}
+    svg .rustic_barn { fill:url(#rustic_barn);}
+    svg .sandstone_melange { fill:url(#sandstone_melange);}
+    svg .spruce_melange { fill:url(#spruce_melange);}
+    svg .steel { fill:url(#steel);}
+    svg .sunflower { fill:url(#sunflower);}
+    svg .swedish_berries { fill:url(#swedish_berries);}
+    svg .vivid_violet { fill:url(#vivid_violet);}
+    svg .wetcement { fill:url(#wetcement);}
+    svg .wheat { fill:url(#wheat);}
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
@@ -36,29 +51,8 @@
   <div style="display: flex; flex-direction: row;">
     <svg width="360" height="500">
       <defs>
-        <pattern id="happy" patternUnits="userSpaceOnUse" width="80" height="80">
-          <image href="/bumby-builder/assets/happy.png" x="-10" y="-10" width="100" height="100" />
-        </pattern>
-        <pattern id="spruce" patternUnits="userSpaceOnUse" width="50" height="50">
-          <image href="/bumby-builder/assets/spruce.png" x="-10" y="-10" width="100" height="100" />
-        </pattern>
-        <pattern id="sandstone" patternUnits="userSpaceOnUse" width="50" height="50">
-          <image href="/bumby-builder/assets/sandstone.png" x="-10" y="-10" width="100" height="100" />
-        </pattern>
-        <pattern id="babyshark" patternUnits="userSpaceOnUse" width="50" height="50">
-          <image href="/bumby-builder/assets/baby_shark.png" x="-10" y="-10" width="100" height="100" />
-        </pattern>
-        <pattern id="lightbosque" patternUnits="userSpaceOnUse" width="50" height="50">
-          <image href="/bumby-builder/assets/light_bosque.png" x="-10" y="-10" width="100" height="100" />
-        </pattern>
-        <pattern id="concrete" patternUnits="userSpaceOnUse" width="50" height="50">
-          <image href="/bumby-builder/assets/concrete_melange.png" x="-10" y="-10" width="100" height="100" />
-        </pattern>
-        <pattern id="wetcement" patternUnits="userSpaceOnUse" width="50" height="50">
-          <image href="/bumby-builder/assets/wet_cement.png" x="-10" y="-10" width="100" height="100" />
-        </pattern>
-        <pattern id="darkcharcoal" patternUnits="userSpaceOnUse" width="50" height="50">
-          <image href="/bumby-builder/assets/dark_charcoal.png" x="-10" y="-10" width="100" height="100" />
+        <pattern ng-repeat="color in colors" id="color.patternId" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/{{color.patternId}}.png" x="-10" y="-10" width="100" height="100" />
         </pattern>
       </defs>
       <!-- Right and left are from viewer's perspective -->
@@ -154,36 +148,160 @@
       .controller('myCtrl', ['$scope', function($scope) {
         $scope.colors = [
           {
-            name: 'Sandstone',
-            patternId: 'sandstone'
+            name: 'Baby Shark',
+            patternId: 'babyshark'
+          },
+          {
+            name: 'Blueberry',
+            patternId: 'blueberry'
+          },
+          {
+            name: 'Buttercup',
+            patternId: 'buttercup'
+          },
+          {
+            name: 'Canyon',
+            patternId: 'canyon'
+          },
+          {
+            name: 'Charcoal',
+            patternId: 'charcoal'
+          },
+          {
+            name: 'Charlie',
+            patternId: 'charlie'
+          },
+          { 
+            name: 'Concrete Melange', 
+            patternId: 'concrete_melange'
+          },
+          { 
+            name: 'Dark Charcoal', 
+            patternId: 'dark_charcoal'
+          },
+          {
+            name: 'Deep Hygrania',
+            patternId: 'deep_hygrania'
+          },
+          {
+            name: 'Denim',
+            patternId: 'denim'
+          },
+          {
+            name: 'Dill',
+            patternId: 'dill'
+          },
+          {
+            name: 'Eggplant Melange',
+            patternId: 'eggplant_melange'
+          },
+          {
+            name: 'Flori Melange',
+            patternId: 'flori_melange'
+          },
+          {
+            name: 'Freckles Melange',
+            patternId: 'freckles_melange'
+          },
+          {
+            name: 'Glenda',
+            patternId: 'glenda'
+          },
+          {
+            name: 'Golden Melange',
+            patternId: 'golden_melange'
           },
           { 
             name: 'Happy', 
             patternId: 'happy'
           },
           {
-            name: 'Spruce',
-            patternId: 'spruce'
+            name: 'Heather Melange',
+            patternId: 'heather_melange'
           },
           {
-            name: 'Baby Shark',
-            patternId: 'babyshark'
+            name: 'Hey',
+            patternId: 'hey'
+          },
+          {
+            name: 'Iced LT',
+            patternId: 'iced_lt'
+          },
+          {
+            name: 'Juiced',
+            patternId: 'juiced'
+          },
+          {
+            name: 'Juniper',
+            patternId: 'juniper'
           },
           { 
             name: 'Light Bosque', 
-            patternId: 'lightbosque'
+            patternId: 'light_bosque'
           },
-          { 
-            name: 'Concrete', 
-            patternId: 'concrete'
+          {
+            name: 'Love Bird',
+            patternId: 'love_bird'
+          },
+          {
+            name: 'Mallard',
+            patternId: 'mallard'
+          },
+          {
+            name: 'Moss',
+            patternId: 'moss'
+          },
+          {
+            name: 'Natural',
+            patternId: 'natural'
+          },
+          {
+            name: 'Peachicot',
+            patternId: 'peachicot'
+          },
+          {
+            name: 'Red Hot',
+            patternId: 'red_hot'
+          },
+          {
+            name: 'Royal',
+            patternId: 'royal'
+          },
+          {
+            name: 'Rustic Barn',
+            patternId: 'rustic_barn'
+          },
+          {
+            name: 'Sandstone Melange',
+            patternId: 'sandstone_melange'
+          },
+          {
+            name: 'Spruce Melange',
+            patternId: 'spruce_melange'
+          },
+          {
+            name: 'Steel',
+            patternId: 'steel'
+          },
+          {
+            name: 'Sunflower',
+            patternId: 'sunflower'
+          },
+          {
+            name: 'Swedish Berries',
+            patternId: 'swedish_berries'
+          },
+          {
+            name: 'Vivid Violet',
+            patternId: 'vivid_violet'
           },
           { 
             name: 'Wet Cement', 
             patternId: 'wetcement'
           },
-          { 
-            name: 'Dark Charcoal', 
-            patternId: 'darkcharcoal'
+          {
+            name: 'Wheat',
+            patternId: 'wheat'
           }
         ];
         var defaultColor = $scope.colors[0];
