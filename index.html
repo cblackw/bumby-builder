@@ -213,17 +213,27 @@
         </pattern>
       </defs>
       <!-- Right and left are from viewer's perspective -->
-      <polygon id="leftFrontPanel" points="65,290 125,155 155,170 160,490 50,495"
-        ng-class="selectedOptions.body.leftPanelColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
-      <polygon id="leftSleeve" points="8,250 40,200 105,145 125,155 65,290 45,420 8,420"
+        <polygon id="leftSleeve" points="8,250 40,200 105,145 125,155 65,290 45,420 8,420"
         ng-class="selectedOptions.sleeves.leftColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
-      <polygon id="centerTrim" points="155,170 185,172 190,490 160,490"
-        ng-class="selectedOptions.body.centerTrimColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
-        <polygon id="rightFrontPanel" points="185,172 220,168 270,270 295,470 190,490"
-        ng-class="selectedOptions.body.rightPanelColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
         <polygon id="rightSleeve" points="220,168 238,152 290,210 359,380 359,430 335,440 275,310 270,270"
         ng-class="selectedOptions.sleeves.rightColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
-
+      
+        <polygon id="rightFrontPanel" points="185,172 220,168 270,270 295,470 190,490"
+        ng-if="!selectedOptions.pocket.show" ng-class="selectedOptions.body.rightPanelColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
+        <polygon id="leftFrontPanel" points="65,290 125,155 155,170 160,490 50,495"
+        ng-if="!selectedOptions.pocket.show" ng-class="selectedOptions.body.leftPanelColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
+        <polygon id="centerTrimNoPocket" points="155,170 185,172 190,490 160,490"
+        ng-if="!selectedOptions.pocket.show" ng-class="selectedOptions.body.centerTrimColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
+        
+        <polygon id="rightFrontPanelPocket" points="185,172 220,168 270,270 295,330 190,330"
+        ng-if="selectedOptions.pocket.show" ng-class="selectedOptions.body.rightPanelColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
+        <polygon id="leftFrontPanelPocket" points="65,290 125,155 155,170 160,330 50,330"
+        ng-if="selectedOptions.pocket.show" ng-class="selectedOptions.body.leftPanelColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
+        <polygon id="centerTrimPocket" points="155,170 185,172 190,330 155,330"
+        ng-if="selectedOptions.pocket.show" ng-class="selectedOptions.body.centerTrimColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
+        <polygon id="centerPanel" points="50,330 295,330 295,470 190,490 160,490 50,495"
+        ng-if="selectedOptions.pocket.show" ng-class="selectedOptions.pocket.backgroundColor.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
+      
         <!-- CUFFS -->
         <polygon id="leftCuff" points="8,385 50,385 45,420 8,420"
         ng-if="selectedOptions.sleeves.cuffs.show" ng-class="selectedOptions.sleeves.cuffs.color.patternId" style="stroke:#000;stroke-width:2;stroke-opacity: 0.3;" />
@@ -289,8 +299,14 @@
         </div>
         <label><input type="checkbox" ng-model="selectedOptions.pocket.show"> Add pocket</label>
         <div ng-if="selectedOptions.pocket.show">
-          <label>Pocket</label>
-          <select ng-options="color as color.name for color in colors" ng-model="selectedOptions.pocket.color"></select>
+          <div>
+            <label>Pocket</label>
+            <select ng-options="color as color.name for color in colors" ng-model="selectedOptions.pocket.color"></select>
+          </div>
+          <div>
+            <label>Center Panel</label>
+            <select ng-options="color as color.name for color in colors" ng-model="selectedOptions.pocket.backgroundColor"></select>
+          </div>
         </div>
         <label><input type="checkbox" ng-model="selectedOptions.body.bottomCuff.show"> Add bottom cuff</label>
         <div ng-if="selectedOptions.body.bottomCuff.show">
@@ -523,7 +539,8 @@
           },
           'pocket': {
             'show': false,
-            'color': defaultColor
+            'color': defaultColor,
+            'backgroundColor': defaultColor
           },
         };
       }]);
