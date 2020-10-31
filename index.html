@@ -2,7 +2,7 @@
 
 <head>
   <style>
-    svg .babyshark { fill:url(#babyshark);}
+    svg .baby_shark { fill:url(#baby_shark);}
     svg .blueberry { fill:url(#blueberry);}
     svg .buttercup { fill:url(#buttercup);}
     svg .canyon { fill:url(#canyon);}
@@ -39,7 +39,7 @@
     svg .sunflower { fill:url(#sunflower);}
     svg .swedish_berries { fill:url(#swedish_berries);}
     svg .vivid_violet { fill:url(#vivid_violet);}
-    svg .wetcement { fill:url(#wetcement);}
+    svg .wet_cement { fill:url(#wet_cement);}
     svg .wheat { fill:url(#wheat);}
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
@@ -51,8 +51,125 @@
   <div style="display: flex; flex-direction: row;">
     <svg width="360" height="500">
       <defs>
-        <pattern ng-repeat="color in colors" id="color.patternId" patternUnits="userSpaceOnUse" width="50" height="50">
+        <!-- <pattern ng-repeat="color in colors" id="color.patternId" patternUnits="userSpaceOnUse" width="50" height="50">
           <image href="/bumby-builder/assets/{{color.patternId}}.png" x="-10" y="-10" width="100" height="100" />
+        </pattern> -->
+        <pattern id="baby_shark" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/baby_shark.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="blueberry" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/blueberry.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="buttercup" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/buttercup.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="canyon" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/canyon.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="charcoal" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/charcoal.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="charlie" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/charlie.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="concrete_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/concrete_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="dark_charcoal" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/dark_charcoal.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="deep_hygrania" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/deep_hygrania.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="denim" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/denim.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="dill" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/dill.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="eggplant_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/eggplant_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="flori_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/flori_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="freckles_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/freckles_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="glenda" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/glenda.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="golden_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/golden_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="happy" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/happy.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="heather_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/heather_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="hey" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/hey.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="iced_lt" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/iced_lt.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="juiced" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/juiced.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="juniper" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/juniper.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="light_bosque" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/light_bosque.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="love_bird" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/love_bird.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="mallard" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/mallard.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="moss" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/moss.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="natural" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/natural.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="peachicot" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/peachicot.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="red_hot" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/red_hot.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="royal" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/royal.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="rustic_barn" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/rustic_barn.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="sandstone_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/sandstone_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="spruce_melange" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/spruce_melange.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="steel" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/steel.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="sunflower" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/sunflower.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="swedish_berries" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/swedish_berries.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="vivid_violet" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/vivid_violet.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="wet_cement" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/wet_cement.png" x="-10" y="-10" width="100" height="100" />
+        </pattern>
+        <pattern id="wheat" patternUnits="userSpaceOnUse" width="50" height="50">
+          <image href="/bumby-builder/assets/wheat.png" x="-10" y="-10" width="100" height="100" />
         </pattern>
       </defs>
       <!-- Right and left are from viewer's perspective -->
@@ -149,7 +266,7 @@
         $scope.colors = [
           {
             name: 'Baby Shark',
-            patternId: 'babyshark'
+            patternId: 'baby_shark'
           },
           {
             name: 'Blueberry',
@@ -297,7 +414,7 @@
           },
           { 
             name: 'Wet Cement', 
-            patternId: 'wetcement'
+            patternId: 'wet_cement'
           },
           {
             name: 'Wheat',
